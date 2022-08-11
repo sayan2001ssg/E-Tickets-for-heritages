@@ -1,0 +1,1 @@
+alert("Ticket is booked against the same aadhar number on same day at same time");

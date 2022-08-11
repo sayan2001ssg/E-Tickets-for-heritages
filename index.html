@@ -1,0 +1,118 @@
+<?php
+// Start the session
+session_start();
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<meta charset="utf-8">
+	<title>Quicktix</title>
+</head>
+<body>
+	<h1>
+		<center>-QUICKTIX-</center><br>
+		<center>Welcome to E-Ticket for MONUMENTS and HERITAGES of India.</center>
+	</h1>
+	<div class="row">
+		<div class="column">
+			<p><strong>Enter the Details to book your ticket.</strong></p>
+			<form action="eticket.php" method="post">
+				<label for="fname">First name:</label><br>
+				<input type="text" id="fname" name="fname" required><br>
+
+				<label for="lname">Last name:</label><br>
+				<input type="text" id="lname" name="lname" required><br>
+
+				<label for="email">Enter your email:</label><br>
+				<input type="email" id="email" name="email" required><br>
+
+				<label for="aadhar">Enter your AADHAR number: (without spaces)</label><br>
+				<input type="text" id="aadhar" name="aadhar" minlength="12" maxlength="12" required><br>
+
+				<label for="place">Select the monument you want to visit:</label><br>
+				<select name="place" id="place">
+			    <option value="TM">Taj Mahal</option>
+			    <option value="VM">Victoria Memorial</option>
+			    <option value="GT">Golden Temple</option>
+			    <option value="QM">Qutub Minar</option>
+			    <option value="MP">Mysore Palace</option>
+			    <option value="LT">Lotus Temple</option>
+			    </select><br>
+
+				<label for="visit">Date of Visit:</label><br>
+				<input type="date" id="visit" name="visit" required><br><br>
+
+				<label for="time">Select your slot:</label><br>
+				Forenoon: 9 AM to 12 PM <br> Afternoon: 2 PM to 5 PM<br>
+				<select name="time" id="time">
+			    <option value="forenoon">Forenoon</option>
+			    <option value="afternoon">Afternoon</option>
+			    </select><br>
+
+				<br><br>
+				
+				<button type="submit" name="proceed">Proceed</button>
+				<input type="reset">
+			</form>
+		</div>
+
+		<div class="column">
+				<p><strong>Find Your Ticket.</strong></p>
+				<form action="eticket.php" method="post">
+					<label for="faadhar">Enter your AADHAR number: (without spaces)</label><br>
+					<input type="text" id="faadhar" name="faadhar" minlength="12" maxlength="12" required><br>
+
+					<label for="fvisit">Date of Visit:</label><br>
+					<input type="date" id="fvisit" name="fvisit" required><br><br>
+
+					<label for="ftime">Select your slot:</label><br>
+					Forenoon: 9 AM to 12 PM <br> Afternoon: 2 PM to 5 PM<br>
+					<select name="ftime" id="ftime">
+				    <option value="forenoon">Forenoon</option>
+				    <option value="afternoon">Afternoon</option>
+				    </select><br>
+					  <br><br>
+
+				  <button type="submit" name="find">Find</button>
+					<input type="reset">
+
+				</form>
+				<span id="msg"></span>
+		</div>
+
+		<!-- <div class="column">
+				<p><strong>Cancel Your Ticket.</strong></p>
+				<form action="delete1.php" method="post">
+					<label for="caadhar">Enter your AADHAR number: (without spaces)</label><br>
+					<input type="text" id="caadhar" name="caadhar" minlength="12" maxlength="12" required><br>
+
+					<label for="cvisit">Date of Visit:</label><br>
+					<input type="date" id="cvisit" name="cvisit" required><br><br>
+
+					<label for="ctime">Select your slot:</label><br>
+					Forenoon: 9 AM to 12 PM <br> Afternoon: 2 PM to 5 PM<br>
+					<select name="ctime" id="ctime">
+				    <option value="forenoon">Forenoon</option>
+				    <option value="afternoon">Afternoon</option>
+				    </select><br>
+					  <br><br>
+
+				  <button type="submit" name="cancel">Cancel Booking</button>
+					<input type="reset">
+
+				</form>
+				<span id="msg"></span>
+		</div> -->
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+	<script type="text/javascript" src="index.js"></script>
+			
+	
+
+	<?php include 'eticket.php'; ?>
+
+</body>
+</html>
+
